@@ -1,33 +1,42 @@
+import { Fragment, useState } from "react";
+import "../index.css";
+
 const Form = () => {
+  const [placeholder, setPlaceholder] = useState("");
+
+  const eventhandler = (e) => setPlaceholder(e.target.value);
   return (
-    <>
-      <Field title="personal information" elements={["name", "email", "phone"]}/>
+    <form>
+      <Field title="personal information" elements={["name", "email", "phone"]} onChange={eventhandler}/>
+      {/* <Field title="personal information" elements={["name", "email", "phone"]}/> */}
       <Field title="education" elements={["school", "major", "graduation"]}/>
       <Field title="skills" elements={["languages", "frameworks", "tools"]}/>
       <Field title="experience" elements={["title", "date", "details"]}/>
       <Field title="personal" elements={["name", "email", "phone"]}/>
-    </>
+      <div>{placeholder}</div>
+    </form>
   );
 };
 
-const Field = ({ title, elements}) => {
+const Field = ({ title, elements, onChange}) => {
   return (
-    <>
+    <div>
       <h1>{title.toUpperCase()}</h1>
       {
         elements.map((element) => {
-          return <Input key={element} name={element}/>;
+          return <Input key={element} name={element} onChange={onChange}/>;
+          //   return <Input key={element} name={element} />;
         })
       }
-    </>
+    </div>
   );
 };
 
-const Input = ({name}) => {
+const Input = ({name, onChange}) => {
   return (
     <>
       <label>{name[0].toUpperCase() + name.toLowerCase().slice(1)}</label>
-      <input></input>
+      <input onChange={onChange}/>
     </>
   );
 };

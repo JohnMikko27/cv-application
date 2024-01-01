@@ -1,0 +1,28 @@
+:root {
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+form {
+  width: fit-content;
+  border: 1px solid black;
+}
+
+form > div {
+  display: grid;
+}
+
+.resume {
+  color: red;
+  border: 1px solid red;
+}
