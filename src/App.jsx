@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import Form from "./components/Form";
-import Resume from "./components/Resume";
+import Main from "./components/Main";
 
 function App() {
 
   return (
     <>
-      <Form/>
-      <Resume/>
+      <Main></Main>
     </>
   );
 }

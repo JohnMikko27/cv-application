@@ -1,49 +1,32 @@
-import { Fragment, useState } from "react";
 import "../index.css";
 
-const Form = () => {
-  const [placeholder, setPlaceholder] = useState("");
-
-  const eventhandler = (e) => setPlaceholder(e.target.value);
+const Form = ({changePersonalInformation, changeEducation, 
+  changeExperience, changeProjects, changeSkills}) => {
+  
   return (
     <form>
-      <Field title="personal information" elements={["name", "email", "phone"]} onChange={eventhandler}/>
-      {/* <Field title="personal information" elements={["name", "email", "phone"]}/> */}
-      <Field title="education" elements={["school", "major", "graduation"]}/>
-      <Field title="skills" elements={["languages", "frameworks", "tools"]}/>
-      <Field title="experience" elements={["title", "date", "details"]}/>
-      <Field title="personal" elements={["name", "email", "phone"]}/>
-      <div>{placeholder}</div>
+      <Input name="Personal Information" onChange={changePersonalInformation}></Input>
+      <Input name="Education" onChange={changeEducation}></Input>
+      <Input name="Experience" onChange={changeExperience}></Input>
+      <Input name="Projects" onChange={changeProjects}></Input>
+      <Input name="Skills" onChange={changeSkills}></Input>
     </form>
-  );
-};
-
-const Field = ({ title, elements, onChange}) => {
-  return (
-    <div>
-      <h1>{title.toUpperCase()}</h1>
-      {
-        elements.map((element) => {
-          return <Input key={element} name={element} onChange={onChange}/>;
-          //   return <Input key={element} name={element} />;
-        })
-      }
-    </div>
   );
 };
 
 const Input = ({name, onChange}) => {
   return (
-    <>
+    <div>
       <label>{name[0].toUpperCase() + name.toLowerCase().slice(1)}</label>
       <input onChange={onChange}/>
-    </>
+    </div>
   );
 };
 
 export default Form;
 
-// once i change the section/Field element of an h1 and a set of Input elements, 
-// i can add a state that has an initial value of an array with predetermined values that correspond to inputs
-// if the user wants to add more inputs (e.g. projects/ job experiences) they can change the state
-// and add an additional value to the array and then should have a map function that Inputs based on the array
+//maybe we could have a section component that takes a name parameter for the name of the section
+// and then we have conditional statements that check the name and 
+// return the appropriate section depending on the name
+// personal info: full name, phone#, email, address
+// education: school name, years attended, major, etc. 
