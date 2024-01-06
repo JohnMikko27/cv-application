@@ -1,32 +1,34 @@
 import "../index.css";
+import Field from "./Field";
 
-const Form = ({changePersonalInformation, changeEducation, 
-  changeExperience, changeProjects, changeSkills}) => {
+const Form = ({changeFullName, changePhoneNumber, changeEmail, changeAddress,
+  changeSchoolName, changeDegree, changeSchoolStartDate, changeSchoolEndDate, changeSchoolLocation,
+  changeCompanyName, changePositionTitle, changeExperienceStartDate, changeExperienceEndDate,
+  changeExperienceLocation, changeDescription, changeProjectName, changeGithub, changeLive,
+  changeProjectDetails, changeSkills}) => {
   
   return (
     <form>
-      <Input name="Personal Information" onChange={changePersonalInformation}></Input>
-      <Input name="Education" onChange={changeEducation}></Input>
-      <Input name="Experience" onChange={changeExperience}></Input>
-      <Input name="Projects" onChange={changeProjects}></Input>
-      <Input name="Skills" onChange={changeSkills}></Input>
+      <Field name="personal information" changeFullName={changeFullName} 
+        changePhoneNumber={changePhoneNumber} changeEmail={changeEmail} changeAddress={changeAddress}>
+      </Field>
+      <Field name="education" changeSchoolName={changeSchoolName} changeDegree={changeDegree}
+        changeSchoolStartDate={changeSchoolStartDate} changeSchoolEndDate={changeSchoolEndDate} 
+        changeSchoolLocation={changeSchoolLocation}>
+      </Field>
+      <Field name="experience" changeCompanyName={changeCompanyName} 
+        changePositionTitle={changePositionTitle} changeExperienceStartDate={changeExperienceStartDate}
+        changeExperienceEndDate={changeExperienceEndDate} changeExperienceLocation={changeExperienceLocation}
+        changeDescription={changeDescription}>
+      </Field>
+      <Field name="projects" changeProjectName={changeProjectName} changeGithub={changeGithub}
+        changeLive={changeLive} changeProjectDetails={changeProjectDetails}></Field>
+      <Field name="skills" changeSkills={changeSkills}></Field>
+
     </form>
   );
 };
 
-const Input = ({name, onChange}) => {
-  return (
-    <div>
-      <label>{name[0].toUpperCase() + name.toLowerCase().slice(1)}</label>
-      <input onChange={onChange}/>
-    </div>
-  );
-};
+// and then i can add buttons to the form field that asks if they want to add more education/experience/projects etc. 
 
 export default Form;
-
-//maybe we could have a section component that takes a name parameter for the name of the section
-// and then we have conditional statements that check the name and 
-// return the appropriate section depending on the name
-// personal info: full name, phone#, email, address
-// education: school name, years attended, major, etc. 
