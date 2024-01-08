@@ -1,0 +1,47 @@
+#resume {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  height: 50rem;
+  margin: 2rem;
+  /* width: fit-content; */
+  min-width: 200px;
+  max-width: 45rem;
+}
+
+#resume > div {
+  padding: 0.5rem;
+}
+
+.personalInformation {
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.personalInformation > div:first-child {
+  grid-column: 1/4;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.education {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+}
+
+.education > div:first-child {
+  padding-left: 3rem;
+}
+
+.education > div:last-child {
+  padding-right: 3rem;
+}
+
+.education > div:first-child > div:last-child,
+.education > div:last-child > div:last-child {
+  font-style: italic;
+}
