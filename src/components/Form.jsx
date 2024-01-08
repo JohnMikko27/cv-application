@@ -4,8 +4,7 @@ import Field from "./Field";
 const Form = ({changeFullName, changePhoneNumber, changeEmail, changeAddress,
   changeSchoolName, changeDegree, changeSchoolStartDate, changeSchoolEndDate, changeSchoolLocation,
   changeCompanyName, changePositionTitle, changeExperienceStartDate, changeExperienceEndDate,
-  changeExperienceLocation, changeDescription, changeProjectName, changeGithub, changeLive,
-  changeProjectDetails, changeSkills}) => {
+  changeExperienceLocation, changeDescription, }) => {
   
   return (
     <form>
@@ -21,10 +20,6 @@ const Form = ({changeFullName, changePhoneNumber, changeEmail, changeAddress,
         changeExperienceEndDate={changeExperienceEndDate} changeExperienceLocation={changeExperienceLocation}
         changeDescription={changeDescription}>
       </Field>
-      <Field name="projects" changeProjectName={changeProjectName} changeGithub={changeGithub}
-        changeLive={changeLive} changeProjectDetails={changeProjectDetails}></Field>
-      <Field name="skills" changeSkills={changeSkills}></Field>
-
     </form>
   );
 };

@@ -110,41 +110,6 @@ const Main = () => {
     });
   }
 
-  function changeProjectName(e){
-    setValue({
-      ...value,
-      projectName: e.target.value
-    });
-  }
-
-  function changeGithub(e){
-    setValue({
-      ...value,
-      github: e.target.value
-    });
-  }
-
-  function changeLive(e){
-    setValue({
-      ...value,
-      live: e.target.value
-    });
-  }
-
-  function changeProjectDetails(e){
-    setValue({
-      ...value,
-      projectDetails: e.target.value
-    });
-  }
-  
-  function changeSkills(e) {
-    setValue({
-      ...value,
-      skills: e.target.value
-    });
-  }
-
   return (
     <>
       <Form 
@@ -163,11 +128,7 @@ const Main = () => {
         changeExperienceEndDate={changeExperienceEndDate}
         changeExperienceLocation={changeExperienceLocation}
         changeDescription={changeDescription}
-        changeProjectName={changeProjectName}
-        changeGithub={changeGithub}
-        changeLive={changeLive}
-        changeProjectDetails={changeProjectDetails}
-        changeSkills={changeSkills}>
+      >
       </Form>
       <Resume value={value}></Resume>
     </>

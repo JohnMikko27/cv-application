@@ -7,44 +7,51 @@ const Field = ({name, changeFullName, changePhoneNumber, changeEmail, changeAddr
     return (
       <div>
         <h1>Personal Information</h1>
-        <Input name="full name" onChange={changeFullName}></Input>
-        <Input name="phone number" onChange={changePhoneNumber}></Input>
-        <Input name="email" onChange={changeEmail}></Input>
-        <Input name="address" onChange={changeAddress}></Input>
+        <div>
+          <Input name="full name" onChange={changeFullName}></Input>
+          <Input name="phone number" onChange={changePhoneNumber}></Input>
+          <Input name="email" onChange={changeEmail}></Input>
+          <Input name="address" onChange={changeAddress}></Input>
+        </div>
       </div>
     );
   } else if (name === "experience") {
     return (
       <div>
         <h1>Experience</h1>
-        <Input name="company name" onChange={changeCompanyName}></Input>
-        <Input name="position title" onChange={changePositionTitle}></Input>
-        <Input name="start date" onChange={changeExperienceStartDate}></Input>
-        <Input name="end date" onChange={changeExperienceEndDate}></Input>
-        <Input name="location" onChange={changeExperienceLocation}></Input>
-        <Input name="description" onChange={changeDescription}></Input>
-        
+        <div>
+          <Input name="company name" onChange={changeCompanyName}></Input>
+          <Input name="position title" onChange={changePositionTitle}></Input>
+          <Input name="start date" onChange={changeExperienceStartDate}></Input>
+          <Input name="end date" onChange={changeExperienceEndDate}></Input>
+          <Input name="location" onChange={changeExperienceLocation}></Input>
+          <Input name="description" onChange={changeDescription}></Input>
+        </div>
       </div>
     );
   } else if (name === "education") {
     return (
       <div>
         <h1>Education</h1>
-        <Input name="school name" onChange={changeSchoolName}></Input>
-        <Input name="degree" onChange={changeDegree}></Input>
-        <Input name="start date" onChange={changeSchoolStartDate}></Input>
-        <Input name="end date" onChange={changeSchoolEndDate}></Input>
-        <Input name="location" onChange={changeSchoolLocation}></Input>
+        <div>
+          <Input name="school name" onChange={changeSchoolName}></Input>
+          <Input name="degree" onChange={changeDegree}></Input>
+          <Input name="start date" onChange={changeSchoolStartDate}></Input>
+          <Input name="end date" onChange={changeSchoolEndDate}></Input>
+          <Input name="location" onChange={changeSchoolLocation}></Input>
+        </div>
       </div>
     );
   } else if (name === "projects") {
     return (
       <div>
         <h1>Projects</h1>
-        <Input name="project name" onChange={changeProjectName}></Input>
-        <Input name="github" onChange={changeGithub}></Input>
-        <Input name="live" onChange={changeLive}></Input>
-        <Input name="details" onChange={changeProjectDetails}></Input>
+        <div>
+          <Input name="project name" onChange={changeProjectName}></Input>
+          <Input name="github" onChange={changeGithub}></Input>
+          <Input name="live" onChange={changeLive}></Input>
+          <Input name="details" onChange={changeProjectDetails}></Input>
+        </div>
       </div>
     );
   } else if (name === "skills") {
@@ -57,11 +64,11 @@ const Field = ({name, changeFullName, changePhoneNumber, changeEmail, changeAddr
   }
 };
 
-const Input = ({name, onChange}) => {
+const Input = ({name, onChange, type="text"}) => {
   return (
     <div>
       <label>{name[0].toUpperCase() + name.toLowerCase().slice(1)}</label>
-      <input onChange={onChange}/>
+      <input type={type} onChange={onChange}/>
     </div>
   );
 };
