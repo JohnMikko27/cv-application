@@ -111,7 +111,7 @@ const Main = () => {
   }
 
   return (
-    <>
+    <div>
       <Form 
         changeFullName={changeFullName}
         changePhoneNumber={changePhoneNumber}
@@ -131,7 +131,7 @@ const Main = () => {
       >
       </Form>
       <Resume value={value}></Resume>
-    </>
+    </div>
     
   );
 };
